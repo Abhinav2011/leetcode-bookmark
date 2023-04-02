@@ -11,7 +11,12 @@ import Search from "../search/Search";
 import Sort from "../sortData/Sort";
 import { Container } from "react-bootstrap";
 
-const Header = ({ userProfilePhoto,bookmarks,handleSearchInput}) => {
+const Header = ({
+  userProfilePhoto,
+  bookmarks,
+  handleSearchInput,
+  handleSort,
+}) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -37,8 +42,10 @@ const Header = ({ userProfilePhoto,bookmarks,handleSearchInput}) => {
           />
         </Toolbar>
       </AppBar>
-      {/* <Search bookmarks={bookmarks} handleSearchInput={handleSearchInput}/> */}
-      <Sort />
+      <Search bookmarks={bookmarks} handleSearchInput={handleSearchInput}/>
+      <Sort
+        handleSort={handleSort}
+      />
     </Box>
   );
 };
