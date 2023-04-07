@@ -1,21 +1,25 @@
 import React from "react";
 import SingleBookmark from "../allBookmark/SingleBookmark";
-import { Container, Row, Col } from "react-bootstrap";
+import Loading from "../loader/Loading";
+import { Container, Row, Col} from "react-bootstrap";
 
-const Bookmarks = ({bookmarks}) => {
-
+const Bookmarks = ({ bookmarks, loading }) => {
   return (
     <Container>
-        {bookmarks.map((bookmark,index) => {
+      {!loading ? (
+        bookmarks.map((bookmark, index) => {
           return (
             <Row key={index}>
               <Col>
-                <SingleBookmark bookmark={bookmark}/>
-                <br/>
+                <SingleBookmark bookmark={bookmark} />
+                <br />
               </Col>
             </Row>
           );
-        })}
+        })
+      ) : (
+        <Loading />
+      )}
     </Container>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Search = ({ bookmarks, handleSearchInput }) => {
+const Search = ({handleSearchInput }) => {
   const [text, setText] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -12,6 +12,7 @@ const Search = ({ bookmarks, handleSearchInput }) => {
   }
   
   return (
+    //TODO: Change this messy code ASAP
     <form class="flex items-center" onSubmit={handleSubmit}>
       <label for="simple-search" class="sr-only">
         Search

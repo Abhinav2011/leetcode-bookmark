@@ -1,7 +1,9 @@
 import React from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 
-const Sort = () => {
+const Sort = ({
+  handleSort,
+}) => {
   return (
     <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
@@ -9,8 +11,12 @@ const Sort = () => {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        <Dropdown.Item onClick={() => console.log('clicked')}>Newest to Oldest</Dropdown.Item>
-        <Dropdown.Item onClick={() => console.log('clicked')}>Oldest to Newest</Dropdown.Item>
+        <Dropdown.Item onClick={handleSort}>
+          Newest to Oldest
+        </Dropdown.Item>
+        <Dropdown.Item onClick={handleSort}>
+          Oldest to Newest
+        </Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

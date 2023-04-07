@@ -6,13 +6,13 @@ import madrid from "../../assets/madrid.svg";
 const allCategories = [
   { id: "1", name: "Interview Question" },
   { id: "2", name: "Interview Experience" },
-  { id: "3", name: "Interview Compensation" },
-  { id: "4", name: "Interview Career" },
+  { id: "3", name: "Compensation" },
+  { id: "4", name: "Career Guide" },
   { id: "5", name: "Study Guide" },
   { id: "6", name: "General Discussion" },
 ];
 
-const Categories = () => {
+const Categories = ({bookmarks,headerComponent}) => {
   return (
     <>
       <h1>Bookmarks By Categories</h1>
