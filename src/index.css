@@ -7,3 +7,11 @@
   line-height: 1.5;
   font-weight: 400;
 }
+
+/* * {
+  background: url("/src/assets/back.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+} */

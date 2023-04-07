@@ -13,9 +13,6 @@ import { Container } from "react-bootstrap";
 
 const Header = ({
   userProfilePhoto,
-  bookmarks,
-  handleSearchInput,
-  handleSort,
 }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -42,10 +39,6 @@ const Header = ({
           />
         </Toolbar>
       </AppBar>
-      <Search bookmarks={bookmarks} handleSearchInput={handleSearchInput}/>
-      <Sort
-        handleSort={handleSort}
-      />
     </Box>
   );
 };
