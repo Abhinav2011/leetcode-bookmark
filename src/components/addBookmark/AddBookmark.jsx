@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Header from "../header/Header";
-import { auth, logout } from "../../firebase";
+import { auth, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { fetchUserProfile,setUserBookmark} from "../../getUserDataFromFirestore";
+import { fetchUserProfile,setUserBookmark} from "../../../utils/getUserDataFromFirestore";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { v4 as uuidv4 } from 'uuid';

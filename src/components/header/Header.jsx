@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { logout } from "../../firebase";
+import { logout } from "../../../utils/firebase";
 import Search from "../search/Search";
 import Sort from "../sortData/Sort";
 import { Container } from "react-bootstrap";

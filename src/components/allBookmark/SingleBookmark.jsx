@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { deleteUserBookmark } from "../../getUserDataFromFirestore";
-import { auth, logout } from "../../firebase";
+import { deleteUserBookmark } from "../../../utils/getUserDataFromFirestore";
+import { auth, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 const SingleBookmark = ({ bookmark }) => {
   const { title, url, category, timestamp } = bookmark;

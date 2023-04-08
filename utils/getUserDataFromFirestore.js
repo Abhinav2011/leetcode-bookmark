@@ -1,4 +1,4 @@
-import { db } from "../src/firebase";
+import { db } from "./firebase";
 import { collection, getDoc, doc, getDocs,setDoc, deleteDoc} from "firebase/firestore";
 
 //fetch the user profile photo from firestore

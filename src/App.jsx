@@ -16,7 +16,7 @@ function App() {
           <Route path="/register" element={<Register />}></Route>
           <Route path="/homepage">
             <Route index element={<Homepage />} />
-            <Route path="category/:id" element={<SingleCategory />}></Route>
+            <Route path="category/:categoryName" element={<SingleCategory />}></Route>
             <Route path="add" element={<AddBookmark />}></Route>
           </Route>
         </Routes>

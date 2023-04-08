@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { auth, logout } from "../../firebase";
+import React, { useEffect, useState, useRef, createContext } from "react";
+import { auth, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import Bookmarks from "../allBookmark/Bookmarks";
@@ -10,7 +10,7 @@ import Sort from "../sortData/Sort";
 import {
   fetchUserProfile,
   fetchUserBookmarks,
-} from "../../getUserDataFromFirestore";
+} from "../../../utils/getUserDataFromFirestore";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
@@ -79,17 +79,7 @@ const Homepage = () => {
         <Button>Add Bookmark</Button>
       </Link>
       <Bookmarks bookmarks={bookmarkData} loading={loading} />
-      <Categories
-        bookmarks={bookmarkData}
-        headerComponent={
-          <Header
-            userProfilePhoto={userProfilePhoto}
-            bookmarks={bookmarkData}
-            handleSearchInput={handleSearchInput}
-            handleSort={handleSort}
-          />
-        }
-      />
+      <Categories />
     </div>
   );
 };
