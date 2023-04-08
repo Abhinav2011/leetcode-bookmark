@@ -6,14 +6,14 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { logout } from "../../firebase";
+import { logout } from "../../../utils/firebase";
 import Search from "../search/Search";
 import Sort from "../sortData/Sort";
 import { Container } from "react-bootstrap";
+import Loading from "../loader/Loading";
+import loading from "../../assets/loading.png";
 
-const Header = ({
-  userProfilePhoto,
-}) => {
+const Header = ({ userProfilePhoto }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -34,7 +34,7 @@ const Header = ({
           ></button>
           <img
             class="w-8 h-8 rounded-full"
-            src={userProfilePhoto}
+            src={!userProfilePhoto ? loading : userProfilePhoto}
             alt="user photo"
           />
         </Toolbar>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import { deleteUserBookmark } from "../../getUserDataFromFirestore";
-import { auth, logout } from "../../firebase";
+import { deleteUserBookmark } from "../../../utils/getUserDataFromFirestore";
+import { auth, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 const SingleBookmark = ({ bookmark }) => {
   const { title, url, category, timestamp } = bookmark;
@@ -20,7 +20,7 @@ const SingleBookmark = ({ bookmark }) => {
     <Card>
       <Card.Header>{title}</Card.Header>
       <Card.Body>
-        <Card.Title>Go to leetcode to view this bookmark</Card.Title>
+        <Card.Title>{`Category - ${bookmark.category}`}</Card.Title>
         <Card.Text>{`Saved on ${date}`}</Card.Text>
         <Button variant="primary" onClick={redirectToLeetcode}>
           View

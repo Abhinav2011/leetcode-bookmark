@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { auth, signInWithGoogle } from "../../firebase";
+import { auth, signInWithGoogle } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Register = () => {
