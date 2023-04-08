@@ -7,7 +7,12 @@ import Header from "../header/Header";
 import Categories from "../categoryBookmark/Categories";
 import Search from "../search/Search";
 import Sort from "../sortData/Sort";
-import { fetchUserProfile,fetchUserBookmarks } from "../../getUserDataFromFirestore";
+import {
+  fetchUserProfile,
+  fetchUserBookmarks,
+} from "../../getUserDataFromFirestore";
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   const [user] = useAuthState(auth);
@@ -56,7 +61,6 @@ const Homepage = () => {
     setBookmarkData(userBookmarksTemp);
     originalData.current = userBookmarksTemp;
     setLoading(false);
-  
   };
 
   useEffect(() => {
@@ -68,11 +72,12 @@ const Homepage = () => {
 
   return (
     <div>
-      <Header
-        userProfilePhoto={userProfilePhoto}
-      />
+      <Header userProfilePhoto={userProfilePhoto} />
       <Search handleSearchInput={handleSearchInput} />
-      <Sort handleSort={handleSort}/>
+      <Sort handleSort={handleSort} />
+      <Link to="/homepage/add">
+        <Button>Add Bookmark</Button>
+      </Link>
       <Bookmarks bookmarks={bookmarkData} loading={loading} />
       <Categories
         bookmarks={bookmarkData}

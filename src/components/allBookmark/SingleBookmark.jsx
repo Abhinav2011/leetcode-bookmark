@@ -20,7 +20,7 @@ const SingleBookmark = ({ bookmark }) => {
     <Card>
       <Card.Header>{title}</Card.Header>
       <Card.Body>
-        <Card.Title>Go to leetcode to view this bookmark</Card.Title>
+        <Card.Title>{`Category - ${bookmark.category}`}</Card.Title>
         <Card.Text>{`Saved on ${date}`}</Card.Text>
         <Button variant="primary" onClick={redirectToLeetcode}>
           View

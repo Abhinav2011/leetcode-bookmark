@@ -10,10 +10,10 @@ import { logout } from "../../firebase";
 import Search from "../search/Search";
 import Sort from "../sortData/Sort";
 import { Container } from "react-bootstrap";
+import Loading from "../loader/Loading";
+import loading from "../../assets/loading.png";
 
-const Header = ({
-  userProfilePhoto,
-}) => {
+const Header = ({ userProfilePhoto }) => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -34,7 +34,7 @@ const Header = ({
           ></button>
           <img
             class="w-8 h-8 rounded-full"
-            src={userProfilePhoto}
+            src={!userProfilePhoto ? loading : userProfilePhoto}
             alt="user photo"
           />
         </Toolbar>

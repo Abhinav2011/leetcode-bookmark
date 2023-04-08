@@ -14,6 +14,7 @@ const AddBookmark = () => {
   const [bookmarkTitle,setBookmarkTitle] = useState("");
   const [bookmarkUrl,setBookmarkUrl] = useState("");
   const [bookmarkCategory,setBookmarkCategory] = useState("");
+  const [url,setUrl] = useState("");
   const navigate = useNavigate();
 
   const fetchData = async () => {
@@ -49,27 +50,39 @@ const AddBookmark = () => {
 
 
   useEffect(() => {
+    //this function will fecth user profile photo URL only
     fetchData();
+
+    //If user is redirected from leetcode, get the url for search params
+    const params = new URLSearchParams(location.search);
+    const currUrl = params.get("url");
+    if(!currUrl){
+      return;
+    }
+    const currTitle = currUrl.split("/")[6];
+    const currCategory = currUrl.split("/")[4];
+    setBookmarkUrl(currUrl);
+    setBookmarkTitle(currTitle);
+    setBookmarkCategory(currCategory);
   }, [user]);
 
-  console.log(userProfilePhoto);
   return (
     <>
       <Header userProfilePhoto={userProfilePhoto} />
       <Form onSubmit={handleFormSubmit}>
         <Form.Group className="mb-3" controlId="formBasicPassword" >
           <Form.Label>Title</Form.Label>
-          <Form.Control type="text" placeholder="Enter Title" onChange={handleTitleChange}/>
-          <Form.Text className="text-muted" ></Form.Text>
+          <Form.Control type="text" placeholder="Enter Title" onChange={handleTitleChange} defaultValue={bookmarkTitle}/>
+          <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Category</Form.Label>
-          <Form.Control type="text" placeholder="Enter Category" onChange={handleCategoryChange}/>
+          <Form.Control type="text" placeholder="Enter Category" onChange={handleCategoryChange} defaultValue={bookmarkCategory}/>
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Leetcode Article Url</Form.Label>
-          <Form.Control type="text" placeholder="Enter URL" onChange={handleUrlChange}/>
+          <Form.Control type="text" placeholder="Enter URL" onChange={handleUrlChange} defaultValue={bookmarkUrl}/>
           <Form.Text className="text-muted"></Form.Text>
         </Form.Group>
         <Button variant="primary" type="submit">
