@@ -14,8 +14,8 @@ import { useNavigate } from "react-router-dom";
 
 const Header = ({ userProfilePhoto }) => {
   const navigate = useNavigate();
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     navigate("/");
   }
   return (

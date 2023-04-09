@@ -58,8 +58,13 @@ const signInWithGoogle = async () => {
 
 
 //logout from the website
-const logout = () => {
-    signOut(auth);
+const logout = async () => {
+    try {
+        await signOut(auth);
+    }
+    catch (e) {
+        console.log(e)
+    }
 };
 
 export {
@@ -67,4 +72,4 @@ export {
     db,
     signInWithGoogle,
     logout,
-  }
+}

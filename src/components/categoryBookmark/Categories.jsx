@@ -20,7 +20,7 @@ const Categories = () => {
   return (
     <div className="category">
       <div className="category-title">
-        <p className="category-title">Bookmarks By Categories</p>
+        <p className="category-title">Bookmarks By&nbsp;<span className="category-title highlight">Categories</span></p>
       </div>
       <Row xs={1} md={3} className="g-6">
         {allCategories.map((category, idx) => (

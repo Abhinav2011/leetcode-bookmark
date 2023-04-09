@@ -10,8 +10,6 @@
 } */
 * {
   font-family: 'Rubik';
-  line-height: 1.5;
-  font-weight: 400;
 }
 
 
@@ -83,10 +81,10 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center center;
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* search bar */
@@ -168,14 +166,22 @@
   font-family: 'Rubik';
   font-size: xx-large;
   font-weight: bolder;
-  background-clip: text !important;
-  -webkit-background-clip: text !important;
-  color: transparent !important;
-  background: black;
+  color: black !important;
+}
+
+.highlight {
+  box-shadow: inset 0 -1.2rem #e2d784;
 }
 
 .category-card {
-  /* background: url("../src/assets/card_background.svg") !important; */
+  background: url("../src/assets/card_background.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center center; */
+  background-attachment: fixed;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
   margin: 2rem auto;
@@ -190,9 +196,16 @@
 
 /* bookmark card  */
 .bookmark-card {
-  background: url("../src/assets/bookmark_background.svg");
+  background: url("../src/assets/card_background.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  background-attachment: fixed;
   filter: brightness(1.2) !important;
-  border: 1px solid !important;
+  border-radius: 0.5rem !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
 }
 
