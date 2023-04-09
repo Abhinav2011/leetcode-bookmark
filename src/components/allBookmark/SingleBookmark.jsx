@@ -11,16 +11,21 @@ const SingleBookmark = ({ bookmark }) => {
   const redirectToLeetcode = () => {
     window.open(url, "_blank");
   };
-  const deleteBookmark = () => {
+  const parseCategory = (category) => {
+    const newText = category.split('-');
+    const newCategory = newText.join(' ');
+    return newCategory;
+  }
+  const deleteBookmark = async () => {
     console.log(bookmark.id);
-    deleteUserBookmark(user, bookmark);
+    await deleteUserBookmark(user, bookmark);
     window.location.reload();
   };
   return (
     <Card className="bookmark-card">
       <Card.Header className="bookmark-card-title">{title}</Card.Header>
       <Card.Body>
-        <Card.Title>{`Category - ${bookmark.category}`}</Card.Title>
+        <Card.Title>{`Category - ${parseCategory(category)}`}</Card.Title>
         <Card.Text>{`Saved on ${date}`}</Card.Text>
         <div className="bookmark-buttons">
           <Button className="bookmark-view" variant="primary" onClick={redirectToLeetcode}>

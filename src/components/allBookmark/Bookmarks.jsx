@@ -8,7 +8,7 @@ const Bookmarks = ({ bookmarks, loading }) => {
     <Container>
       {!loading ? (
         bookmarks.length === 0 ? (
-          <h1>No Bookmark Available</h1>
+          <h1 className="no-bookmark">No Bookmark Available</h1>
         ) : (
           bookmarks.map((bookmark, index) => {
             return (

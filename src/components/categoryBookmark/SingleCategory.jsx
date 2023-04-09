@@ -33,10 +33,10 @@ const SingleCategory = () => {
   }, [user]);
 
   return (
-    <>
+    <div className="single-category">
       <Header userProfilePhoto={userProfilePhoto} />
       <Bookmarks bookmarks={categoryData} loading={loading} />
-    </>
+    </div>
   );
 };
 

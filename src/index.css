@@ -3,11 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* :root {
-  font-family: 'Rubik', system-ui, Avenir, Helvetica, Arial, sans-serif !important;
-  line-height: 1.5;
-  font-weight: 400;
-} */
+
 * {
   font-family: 'Rubik';
 }
@@ -77,13 +73,8 @@
 
 .homepage {
   background: url("../src/assets/home_background.svg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-repeat: repeat;
-  background-position: center center;
-  background-attachment: fixed;
   min-height: 100vh;
 }
 
@@ -100,11 +91,6 @@
   font-weight: bolder;
 }
 
-/* sort dropdown */
-/* .sort{
-  display: inline-block;
-  vertical-align: middle;
-} */
 
 /* header buttons */
 .header-buttons {
@@ -136,8 +122,6 @@
 .header-text {
   font-family: 'Rubik' !important;
   background-clip: text !important;
-  -webkit-background-clip: text !important;
-  /* Safari and other WebKit-based browsers */
   color: transparent !important;
   background: white;
   font-weight: bolder !important;
@@ -175,13 +159,8 @@
 
 .category-card {
   background: url("../src/assets/card_background.svg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-position: center center; */
-  background-attachment: fixed;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
   margin: 2rem auto;
@@ -197,13 +176,8 @@
 /* bookmark card  */
 .bookmark-card {
   background: url("../src/assets/card_background.svg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   background-repeat: repeat;
-  background-position: center center;
-  background-attachment: fixed;
   filter: brightness(1.2) !important;
   border-radius: 0.5rem !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
@@ -225,4 +199,78 @@
   justify-content: center;
   transform: scale(1.5,1.5) !important;
   margin-bottom: 5rem !important;
+  margin-top: 5rem !important;
+}
+
+/* No Bookmark */
+
+.no-bookmark {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem !important;
+  font-family: 'Rubik';
+}
+
+/* Single Category */
+.single-category {
+  background: url("../src/assets/home_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+/* add bookmark */
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20%;
+  margin-right:20%;
+  margin-top: 5%;
+}
+
+.add-bookmark {
+  background: url("../src/assets/home_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.add-form-name{
+  font-family: 'Rubik' !important;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.text-input{
+  font-family: 'Rubik' !important;
+  font-weight: 400 !important;
+}
+
+.add-form-submit {
+  margin-bottom: 2rem;
+}
+
+.add-page-title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Rubik';
+  font-size: xx-large;
+  font-weight: bolder;
+  color: black !important;
+}
+.add-card {
+  background: url("../src/assets/card_background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(1.2) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .26) !important;
+  border-radius: 5px !important;
+  border: 1px solid black !important;
+  margin: 2rem auto;
+  max-width: 45rem;
+  padding: 10px;
+  margin-bottom: 2rem;
 }
