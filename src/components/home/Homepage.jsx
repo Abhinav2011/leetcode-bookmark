@@ -71,14 +71,22 @@ const Homepage = () => {
   }, [user]);
 
   return (
-    <div>
+    <div className="homepage">
       <Header userProfilePhoto={userProfilePhoto} />
-      <Search handleSearchInput={handleSearchInput} />
-      <Sort handleSort={handleSort} />
-      <Link to="/homepage/add">
-        <Button>Add Bookmark</Button>
-      </Link>
-      <Bookmarks bookmarks={bookmarkData} loading={loading} />
+      <div className="header-buttons">
+        <div className="input">
+          <div className="search-component">
+            <Search handleSearchInput={handleSearchInput} />
+          </div>
+          <div className="sort-component">
+            <Sort handleSort={handleSort} />
+            <Link to="/homepage/add">
+              <Button>Add Bookmark</Button>
+            </Link>
+          </div>
+        </div>
+        <Bookmarks bookmarks={bookmarkData} loading={loading} />
+      </div>
       <Categories />
     </div>
   );

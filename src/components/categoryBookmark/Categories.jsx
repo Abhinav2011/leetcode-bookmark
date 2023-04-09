@@ -3,38 +3,40 @@ import { Link } from "react-router-dom";
 import { Button, Card, Col, Row } from "react-bootstrap";
 import questions from "../../assets/questions.svg";
 
-
 const allCategories = [
-  { id: "1", name: "interview-question",image:questions },
-  { id: "2", name: "interview-experience",image:questions },
-  { id: "3", name: "compensation",image:questions },
-  { id: "4", name: "career-guide",image:questions },
-  { id: "5", name: "study-guide",image:questions },
-  { id: "6", name: "general-discussion",image:questions },
+  { id: "1", name: "Interview Question", image: questions },
+  { id: "2", name: "Interview Experience", image: questions },
+  { id: "3", name: "Compensation", image: questions },
+  { id: "4", name: "Career Guide", image: questions },
+  { id: "5", name: "Study Guide", image: questions },
+  { id: "6", name: "General Discussion", image: questions },
 ];
 
 const Categories = () => {
+  const parseCategoryName = (text) => {
+    const newText = text.toLowerCase().replace(/\s+/g, '-');
+    return newText;
+  }
   return (
-    <>
-      <h1>Bookmarks By Categories</h1>
+    <div className="category">
+      <div className="category-title">
+        <p className="category-title">Bookmarks By Categories</p>
+      </div>
       <Row xs={1} md={3} className="g-6">
         {allCategories.map((category, idx) => (
           <Col key={idx}>
-            <Card fluid>
-              {/* <Card.Img variant="top" src={category.image} /> */}
+            <Card className="category-card">
               <Card.Body>
-                <Card.Title>{category.name}</Card.Title>
-                <Link to={"/homepage/category/"+ (allCategories[idx].name)}>
-                  <Button variant="primary">
-                    View
-                  </Button>
+                <Card.Title className="category-card-title">{category.name}</Card.Title>
+                <Link to={"/homepage/category/" + parseCategoryName(allCategories[idx].name)}>
+                  <Button variant="primary">View</Button>
                 </Link>
               </Card.Body>
             </Card>
           </Col>
         ))}
       </Row>
-    </>
+    </div>
   );
 };
 
