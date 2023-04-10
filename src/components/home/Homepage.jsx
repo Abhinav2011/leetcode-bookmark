@@ -50,7 +50,6 @@ const Homepage = () => {
           : b.timestamp.seconds - a.timestamp.seconds;
       });
       setAscending(!ascending);
-      console.log(sortedData);
       return sortedData;
     });
   };

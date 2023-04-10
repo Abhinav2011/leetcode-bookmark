@@ -13,7 +13,6 @@ const Search = ({ handleSearchInput }) => {
   };
 
   return (
-    //TODO: Change this messy code ASAP
     <div className="search">
       <input
         type="text"
