@@ -3,23 +3,30 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, signInWithGoogle, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import google from "../../assets/google.svg";
 
 const Login = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   useEffect(() => {
-    if(user){
-        navigate("/homepage");
+    if (user) {
+      navigate("/homepage");
     }
-  },[user]);
-  
+  }, [user]);
+
   return (
-    <div>
-      <div className="google-login">
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
-      </div>
-      <div className="register-redirect-text">
-        Don't have an account ?<Link to="/register">Register</Link>
+    <div className="login-page">
+      <div className="login-card">
+        <h2 className="title">Log in</h2>
+        <div className="google-login">
+          <button className="google-btn" onClick={signInWithGoogle}>
+            <img alt="Google" src={google} />
+            <p class="btn-text">Sign in with Google</p>
+          </button>
+        </div>
+        <div className="register-redirect-text">
+          Don't have an account ?<Link to="/register"> Register</Link>
+        </div>
       </div>
     </div>
   );

@@ -14,6 +14,8 @@ import {
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
+
+
 const Homepage = () => {
   const [user] = useAuthState(auth);
   const [userProfilePhoto, setUserProfilePhoto] = useState("");
@@ -48,7 +50,6 @@ const Homepage = () => {
           : b.timestamp.seconds - a.timestamp.seconds;
       });
       setAscending(!ascending);
-      console.log(sortedData);
       return sortedData;
     });
   };
@@ -71,14 +72,22 @@ const Homepage = () => {
   }, [user]);
 
   return (
-    <div>
+    <div className="homepage">
       <Header userProfilePhoto={userProfilePhoto} />
-      <Search handleSearchInput={handleSearchInput} />
-      <Sort handleSort={handleSort} />
-      <Link to="/homepage/add">
-        <Button>Add Bookmark</Button>
-      </Link>
-      <Bookmarks bookmarks={bookmarkData} loading={loading} />
+      <div className="header-buttons">
+        <div className="input">
+          <div className="search-component">
+            <Search handleSearchInput={handleSearchInput} />
+          </div>
+          <div className="sort-component">
+            <Sort handleSort={handleSort} />
+            <Link to="/homepage/add">
+              <Button>Add Bookmark</Button>
+            </Link>
+          </div>
+        </div>
+        <Bookmarks bookmarks={bookmarkData} loading={loading} />
+      </div>
       <Categories />
     </div>
   );

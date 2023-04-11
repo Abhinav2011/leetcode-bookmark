@@ -9,19 +9,23 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { logout } from "../../../utils/firebase";
 import Search from "../search/Search";
 import Sort from "../sortData/Sort";
-import { Container } from "react-bootstrap";
-import Loading from "../loader/Loading";
 import loading from "../../assets/loading.png";
+import { useNavigate } from "react-router-dom";
 
 const Header = ({ userProfilePhoto }) => {
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    await logout();
+    navigate("/");
+  }
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1 }} >
+      <AppBar position="static" className="header">
         <Toolbar>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
+          <Typography variant="h4" component="div" sx={{ flexGrow: 1 }} className="header-text">
             Leetcode Bookmark
           </Typography>
-          <Button color="inherit" onClick={logout}>
+          <Button color="inherit" onClick={handleLogout} className="logout-button">
             Logout
           </Button>
           <button
@@ -33,7 +37,7 @@ const Header = ({ userProfilePhoto }) => {
             data-dropdown-placement="bottom"
           ></button>
           <img
-            class="w-8 h-8 rounded-full"
+            className="w-8 h-8 rounded-full profile-pic"
             src={!userProfilePhoto ? loading : userProfilePhoto}
             alt="user photo"
           />

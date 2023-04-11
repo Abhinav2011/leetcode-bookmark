@@ -5,7 +5,7 @@ const Sort = ({
   handleSort,
 }) => {
   return (
-    <Dropdown>
+    <Dropdown style={{marginRight:"2rem"}}>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Sort
       </Dropdown.Toggle>

@@ -1,17 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@500&family=Rubik&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+
+* {
+  font-family: 'Rubik';
 }
 
-/* * {
-  background: url("/src/assets/back.svg");
+
+/* login page */
+.login-page {
+  background: url("../src/assets/login_background.svg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-attachment: fixed;
-} */
+  height: 100vh;
+
+} 
+
+.login-card {
+  font-family: sans-serif;
+  position: absolute;
+  margin-top: 20% !important;
+  margin-left: 5% !important;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  border-radius: 10px;
+  background-color: #ffff;
+  padding: 1.8rem;
+  box-shadow: 2px 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-weight: bolder;
+  font-size: x-large;
+  align-items: center;
+  text-align: center;
+}
+
+.google-login {
+  display: flex;
+  justify-content: center;
+}
+
+.google-btn {
+  background: #fff;
+  border: solid 2px rgb(245 239 239);
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 0.7rem;
+  gap: 5px;
+}
+
+.register-redirect-text {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* homepage*/
+
+.homepage {
+  background: url("../src/assets/home_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+/* search bar */
+.search {
+  display: flex;
+}
+
+.search-text {
+  border: 0.2rem solid skyblue;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bolder;
+}
+
+
+/* header buttons */
+.header-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.sort-component {
+  display: flex;
+}
+
+/* header */
+
+.header {
+  background-color: black !important;
+  opacity: 0.6 !important;
+  background: linear-gradient(90deg, #633C7F 6%, #DCD96D 82%, #B50EB5 100%);
+}
+
+.header-text {
+  font-family: 'Rubik' !important;
+  background-clip: text !important;
+  color: transparent !important;
+  background: white;
+  font-weight: bolder !important;
+  font-size: 2.5em !important;
+}
+
+.logout-button {
+  font-family: 'Rubik' !important;
+  font-weight: bolder !important;
+  font-size: 1.2em !important;
+  margin-right: 2rem !important;
+}
+
+.logout-button:hover {
+  border: 2px solid skyblue;
+}
+
+.profile-pic {
+  transform: scale(1.5, 1.5);
+}
+
+/* bookmark categories */
+.category-title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Rubik';
+  font-size: xx-large;
+  font-weight: bolder;
+  color: black !important;
+}
+
+.highlight {
+  box-shadow: inset 0 -1.2rem #e2d784;
+}
+
+.category-card {
+  background: url("../src/assets/card_background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
+  margin: 2rem auto;
+  max-width: 30rem;
+  padding: 10px;
+}
+
+.category-card-title {
+  font-weight: bolder !important;
+  font-size: 1.5em !important;
+}
+
+/* bookmark card  */
+.bookmark-card {
+  background: url("../src/assets/card_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  filter: brightness(1.2) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .26);
+}
+
+.bookmark-card-title {
+  font-weight: bolder;
+  font-size: large;
+}
+
+.bookmark-view {
+  margin-right: 0.7rem;
+}
+
+/* Loader */
+
+.loader {
+  display: flex;
+  justify-content: center;
+  transform: scale(1.5,1.5) !important;
+  margin-bottom: 5rem !important;
+  margin-top: 5rem !important;
+}
+
+/* No Bookmark */
+
+.no-bookmark {
+  display: flex;
+  justify-content: center;
+  margin-top: 10rem !important;
+  font-family: 'Rubik';
+}
+
+/* Single Category */
+.single-category {
+  background: url("../src/assets/home_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+/* add bookmark */
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20%;
+  margin-right:20%;
+  margin-top: 5%;
+}
+
+.add-bookmark {
+  background: url("../src/assets/home_background.svg");
+  background-size: cover;
+  background-repeat: repeat;
+  min-height: 100vh;
+}
+
+.add-form-name{
+  font-family: 'Rubik' !important;
+  font-weight: bolder;
+  font-size: 1.2em;
+}
+
+.text-input{
+  font-family: 'Rubik' !important;
+  font-weight: 400 !important;
+}
+
+.add-form-submit {
+  margin-bottom: 2rem;
+}
+
+.add-page-title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Rubik';
+  font-size: xx-large;
+  font-weight: bolder;
+  color: black !important;
+}
+.add-card {
+  background: url("../src/assets/card_background.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: brightness(1.2) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .26) !important;
+  border-radius: 5px !important;
+  border: 1px solid black !important;
+  margin: 2rem auto;
+  max-width: 45rem;
+  padding: 10px;
+  margin-bottom: 2rem;
+}
