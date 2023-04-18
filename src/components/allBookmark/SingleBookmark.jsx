@@ -3,9 +3,11 @@ import { Card, Button, Container, Row } from "react-bootstrap";
 import { deleteUserBookmark } from "../../../utils/getUserDataFromFirestore";
 import { auth, logout } from "../../../utils/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
+import moment from "moment";
+
 const SingleBookmark = ({ bookmark }) => {
   const { title, url, category, timestamp } = bookmark;
-  const date = new Date(timestamp.seconds * 1000);
+  const date = moment(timestamp.seconds * 1000).format('MMMM Do YYYY, h:mm:ss a')
   const [user] = useAuthState(auth);
 
   const redirectToLeetcode = () => {
