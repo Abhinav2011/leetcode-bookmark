@@ -17,7 +17,7 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-card">
-        <h2 className="title">Log in</h2>
+        <h2 className="title">Sign in</h2>
         <div className="google-login">
           <button className="google-btn" onClick={signInWithGoogle}>
             <img alt="Google" src={google} />

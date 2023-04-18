@@ -56,6 +56,7 @@ const Homepage = () => {
 
   const fetchData = async () => {
     const photoUrl = await fetchUserProfile(user);
+    console.log(photoUrl);
     setUserProfilePhoto(photoUrl);
     setLoading(true);
     const userBookmarksTemp = await fetchUserBookmarks(user);
