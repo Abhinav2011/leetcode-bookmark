@@ -40,7 +40,7 @@ Install dependencies
 Run the website
 
 ```bash
-  npm run dev
+  npm start
 ```
 
 
