@@ -10,7 +10,7 @@ Chrome extension which helps you to save your favourite articles from leetcode t
 
 ## Demo
 
-https://transfer-music.vercel.app/
+https://leetcode-bookmark.vercel.app/
 
 Note : Install the leetcode bookmark extension to use this website, or you can add articles manually on the site.
 
